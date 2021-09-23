@@ -18,8 +18,9 @@ class MathUtilsTest {
         // when
         double result = mathUtils.addition(numbers);
         // then
-        assertEquals(2, result);
+        assertEquals(2, result, "Optional failure message");
     }
+
     @Test
     public void testSubstraction() {
         // given
@@ -27,8 +28,9 @@ class MathUtilsTest {
         // when
         double result = mathUtils.subtraction(4, 2);
         // then
-        assertEquals(2, result);
+        assertEquals(2, result, "Optional failure message");
     }
+
     @Test
     public void testDivision() {
         // given
@@ -36,8 +38,9 @@ class MathUtilsTest {
         // when
         double result = mathUtils.divison(4, 2);
         // then
-        assertEquals(2, result);
+        assertEquals(5, result, "Optional failure message");
     }
+
     @Test
     public void testMultiplication() {
         // given
@@ -45,6 +48,14 @@ class MathUtilsTest {
         // when
         double result = mathUtils.multiplication(1, 2);
         // then
-        assertEquals(2, result);
+        assertEquals(2, result, "Optional failure message");
     }
+    /*@Test
+    void shouldThrowException() {
+        Exception exception = assertThrows(
+                ArithmeticException.class,
+                () -> calculator.divide(1, 0));
+        assertEquals("/ by zero", exception.getMessage());
+    }
+     */
 }
