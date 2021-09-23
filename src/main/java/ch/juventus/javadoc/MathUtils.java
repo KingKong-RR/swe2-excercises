@@ -59,6 +59,4 @@ public class MathUtils {
     public double multiplication(double a, double b) {
         return a * b;
     }
-
-
 }
