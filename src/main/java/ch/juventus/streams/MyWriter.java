@@ -1,9 +1,6 @@
 package ch.juventus.streams;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 
 public class MyWriter {
 
@@ -20,4 +17,15 @@ public class MyWriter {
         writer.close();
     }
 
+    public void writeToTexFilePosition(String filePath, String accessMode, int position) throws IOException {
+        RandomAccessFile file = new RandomAccessFile(filePath, accessMode);
+
+        file.seek(position); // Nach 200 Zeichen
+
+        file.write("-huhu-".getBytes());
+
+        file.close();
+
+        //long position = file.getFilePointer(); // Gibt den aktuellen Index zurück
+    }
 }

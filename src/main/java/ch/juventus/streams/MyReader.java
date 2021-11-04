@@ -1,9 +1,6 @@
 package ch.juventus.streams;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 
 public class MyReader {
 
@@ -20,4 +17,19 @@ public class MyReader {
         reader.close();
     }
 
+    public void readFromTexFilePosition(String filePath, String accessMode, int position) throws IOException{
+        RandomAccessFile file = new RandomAccessFile(filePath, accessMode);
+
+        file.seek(position); // Nach 200 Zeichen
+
+        int data = file.read();
+        while(data != -1){
+            char dataChar = (char) data;
+            System.out.print(dataChar);
+            data = file.read();
+        }
+
+        file.close();
+        //long position = file.getFilePointer(); // Gibt den aktuellen Index zurück
+    }
 }
